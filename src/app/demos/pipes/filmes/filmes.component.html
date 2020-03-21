@@ -1,0 +1,23 @@
+<div class="container main-container">
+  <h1>Filmes</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <td scope="col"></td>
+        <td scope="col">Nome</td>
+        <td scope="col">Data Lançamento</td>
+        <td scope="col">valor</td>
+        <td scope="col">Tamanho Arquivo</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let filme of mapped">
+        <img [src]="filme.imagem" style="padding-bottom: 5px;">
+        <td>{{ filme.nome | titlecase }}</td>
+        <td>{{ filme.dataLacamento | date:"dd/MM/yyyy" }}</td>
+        <td>{{ filme.valor | currency:'BRL':'symbol':'1.2-2':'pt'}}</td>
+        <td>{{ filme.tamanho | filesize }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
